@@ -1,0 +1,117 @@
+<div class="wrapper default-theme">
+    <app-header></app-header>
+    <main>
+        <app-sidebar></app-sidebar>
+        <div class="pages container-fluid pt-4 pb-4 pl-4 pr-4 ">
+
+            <h4 class="mb-4 text-muted d-none">Dashboard </h4>
+
+            <div class="row mb-4">
+
+                <div class="col-md-12">
+                    <div class="card border-0 rounded-0">
+                        <div class="card-title mb-1 p-3 d-flex">
+                            <div class="col-lg-6">
+                                <h5>Products</h5>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="float-right col-lg-3 btn btn-block btn-lightning rounded-0"
+                                    routerLink="/add-product">Add Product</div>
+                            </div>
+
+
+                        </div>
+                        <div class="card-body">
+
+
+                            <div class="table-responsive-md">
+                                <table class="border table all-package theme-table table-product" id="table_id">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Image</th>
+                                            <th>Product Name</th>
+                                            <th>Category</th>
+                                            <th>Current Qty</th>
+                                            <th>Price</th>
+                                            <th>Status</th>
+                                            <th>Option</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <!-- <tr>
+                                            <td>
+                                                <div class="table-image">
+                                                    <img src="https://themes.pixelstrap.com/fastkart/back-end/assets/images/product/1.png" class="img-fluid" alt="">
+                                                </div>
+                                            </td>
+
+                                            <td>Aata Buscuit</td>
+
+                                            <td>Buscuit</td>
+
+                                            <td>12</td>
+
+                                            <td class="td-price">$95.97</td>
+
+                                            <td class="status-danger">
+                                                <span>Pending</span>
+                                            </td>
+
+                                            <td>
+                                                <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
+                                                    <i class="far fa-eye"></i>
+                                                  </a>
+                                                <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
+                                                  <i class="far fa-edit"></i>
+                                                </a>
+                                                <a class="btn btn-sm btn-outline-lightning rounded-0">
+                                                  <i class="far fa-trash-alt"></i>
+                                                </a>
+                                              </td>
+                                        </tr> -->
+                                        <tr *ngFor="let list of products_list let i=index;">
+                                            <td>
+                                                <div class="table-image">
+                                                    <img src="https://themes.pixelstrap.com/fastkart/back-end/assets/images/product/1.png" class="img-fluid" alt="">
+                                                </div>
+                                            </td>
+                                            <td>{{list.product_name}}</td>
+
+                                            <td>{{list.product_name}}</td>
+
+                                            <td>{{list.quantity}}</td>
+
+                                            <td class="td-price">{{list.price}}</td>
+
+                                            <td class="status-danger">
+                                                <span>Pending</span>
+                                            </td>
+
+                                            <td>
+                                                <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
+                                                    <i class="far fa-eye"></i>
+                                                  </a>
+                                                <a class="btn btn-sm btn-outline-lightning rounded-0 mr-2 ">
+                                                  <i class="far fa-edit"></i>
+                                                </a>
+                                                <a class="btn btn-sm btn-outline-lightning rounded-0">
+                                                  <i class="far fa-trash-alt"></i>
+                                                </a>
+                                              </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <app-footer></app-footer>
+        </div>
+    </main>
+
+</div>

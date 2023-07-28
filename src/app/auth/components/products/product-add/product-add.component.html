@@ -1,0 +1,93 @@
+<div class="wrapper default-theme">
+    <app-header></app-header>
+    <main>
+      <app-sidebar></app-sidebar>
+      <div class="pages container-fluid pt-4 pb-4 pl-4 pr-4 ">
+ 
+        <div class="row">
+            <div class="col-md-12 mb-4 ">
+        
+              <div class="card border-0 rounded-0">
+                <div class="card-title mb-1 p-3">
+                  <h5>Add Product</h5>
+                </div>
+                <div class="card-body">
+                  <form [formGroup]="addForm" (ngSubmit)="addproduct(addForm.value)">
+                    <div class="form-group">
+                      <label for="Product Name">Name </label>
+                      <input type="text" class="form-control  rounded-0"  formControlName="product_name" id="product_name"
+                        placeholder="">
+                        <p class="has-error" *ngIf="!addForm.controls['product_name'].valid&&isSubmitted">Please enter product name
+                        </p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Category">Category </label>
+                    
+                          <select class="form-control rounded-0" id="product_cat" formControlName="product_cat">
+                            <option>Fruits</option>
+                            <option>Vegetables</option>
+                            <option>Grocery</option>                      
+                          </select>
+                          <p class="has-error" *ngIf="!addForm.controls['product_cat'].valid&&isSubmitted">Please select category 
+                          </p>
+                      </div>
+                      <div class="form-group">
+                        <label for="Quantity"> Quantity </label>
+                        <input type="text" class="form-control  rounded-0" formControlName="qty" id="qty" 
+                          placeholder="">
+                          <p class="has-error" *ngIf="!addForm.controls['qty'].valid&&isSubmitted">Please enter quantity
+                          </p>
+                      </div>
+                      <div class="form-group">
+                        <label for="Price"> Price </label>
+                        <input type="text" class="form-control  rounded-0"  formControlName="price" id="price"
+                          placeholder="">
+                          <p class="has-error" *ngIf="!addForm.controls['price'].valid&&isSubmitted">Please enter price
+                          </p>
+                      </div>
+                    <div class="form-group">
+                      <label>Image </label>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile" formControlName="customFile"  (change)="productimage($event)">
+                        <label class="custom-file-label rounded-0" for="customFile">Choose file</label>
+                        <p class="has-error" *ngIf="product_file_name==''">Choose file</p>
+                          <label class="custom-file-label" for="exampleInputFile" *ngIf="product_file_name!=''">{{product_file_name}}</label>
+                      </div>
+                    </div>                   
+                    <div class="form-group">
+                        <label for="URL"> Video URL </label>
+                        <input type="text" class="form-control  rounded-0" id="vid_url" formControlName="vid_url"
+                          placeholder="">
+                      </div>
+                    
+                      <div class="form-group">
+                        <label for="Description">Description</label>
+                        <textarea class="form-control rounded-0" id="product_desc" rows="3" formControlName="product_desc"></textarea>
+                        <p class="has-error" *ngIf="!addForm.controls['product_desc'].valid&&isSubmitted">Please enter description
+                        </p>
+                      </div>
+                      <div class="form-group">
+                        <label for="Status">Status</label>
+                        <select class="form-control rounded-0" id="status" formControlName="status">
+                          <option>Available</option>
+                          <option>Not Available</option>                    
+                        </select>
+                        <p class="has-error" *ngIf="!addForm.controls['status'].valid&&isSubmitted">Please select status
+                        </p>
+                      </div>
+                    <div class="form-group row mx-auto justify-content-center">
+                      <button type="submit" class="btn btn-lightning rounded-0 mb-2 mr-2">Save</button>
+                      <button type="button " class="btn btn-outline-lightning rounded-0 mb-2" routerLink="/products">Cancel</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <app-footer></app-footer>   
+      </div> 
+    </main>
+  
+  </div>
